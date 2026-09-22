@@ -1,7 +1,10 @@
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/hilta-nuusiku-iita-portfolio/',
+  base: process.env.GITHUB_ACTIONS
+    ? '/hilta-nuusiku-iita-portfolio/'
+    : '/',
 })
